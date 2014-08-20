@@ -1,6 +1,6 @@
 get '/' do
-  # api = Brewskis::Client.new
-  # @beers = api
-  # p @beers
+  api = Brewskis::Client.new
+  @beer = api.locations
+  p @beer
   erb :index
 end
