@@ -2,12 +2,8 @@ navigator.geolocation.getCurrentPosition( function(position) {
     var latitude = position.coords.latitude
     var longitude = position.coords.longitude
     $('.coords').text("Your coordinates are " + latitude + ", " + longitude)
+    // AJAX to index.rb
 });
-
-// function myCoords() {
-//   var latitude = position.coords.latitude;
-//   var longitude = position.coords.longitude;
-// }
 
 ////////////GEOLOCATION////////////////
 navigator.geolocation.getCurrentPosition( function(position) {

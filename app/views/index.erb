@@ -13,58 +13,30 @@
     <h1>Brew Bar Baz</h1>
     <h3>The following breweries are in your area. Support your local businesses!</h3>
     <p class="coords">Your coordinates are not available. Please allow this site to view your location and try refreshing the page.</p>
-    <p class="introtext"><%= @beer %></p>
+    <div class="introtext">
+
+    </div>
     </header>
   </div>
   <div id="maincontentcontainer">
     <div id="maincontent">
-
-      <div class="section group">
+     <!--  <div class="section group">
       <h3>Two Columns</h3>
-      </div>
+      </div> -->
 
+      <% @breweries.each_with_index do |brewery, index| %>
       <div class="section group">
         <div class="col span_1_of_2">
-        1 of 2
+        <%= index %>
+        <%= brewery["streetAddress"] %>
         </div>
         <div class="col span_1_of_2">
-        1 of 2
+        <%= index %>
+        <%= brewery["streetAddress"] %>
         </div>
       </div>
+      <% end %>
 
-      <div class="section group">
-      <h3>Three Columns</h3>
-      </div>
-
-      <div class="section group">
-        <div class="col span_1_of_3">
-        1 of 3
-        </div>
-        <div class="col span_1_of_3">
-        1 of 3
-        </div>
-        <div class="col span_1_of_3">
-        1 of 3
-        </div>
-      </div>
-
-      <div class="section group">
-      <h3>Four Columns</h3>
-      </div>
-
-      <div class="section group">
-        <div class="col span_1_of_4">
-        1 of 4
-        </div>
-        <div class="col span_1_of_4">
-        1 of 4
-        </div>
-        <div class="col span_1_of_4">
-        1 of 4
-        </div>
-        <div class="col span_1_of_4">
-        1 of 4
-        </div>
       </div>
     </div>
   </div>
