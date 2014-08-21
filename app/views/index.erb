@@ -1,32 +1,33 @@
 <div id="skiptomain"><a href="#maincontent">skip to main content</a></div>
 
 <div id="map-canvas"></div>
-
-<div class="container">
-  <button id="find-me">find me</button>
+<button id="find-me">find me</button>
   <button id="zoom-in">zoom to me</button>
-  <!-- zip code form -->
-  <form>
-  </form>
-</div>
 
-<div id="wrapper">
-  <div id="headcontainer">
-    <header>
-      <h1>Brew Bar Baz</h1>
-      <h3>The following breweries are in your area. Support your local businesses!</h3>
-      <p class="coords">Your coordinates are not available. Please allow this site to view your location and try refreshing the page.</p>
-      <div class="introtext">
 
-      </div>
-    </header>
-  </div>
-  <div id="maincontentcontainer">
-    <div id="maincontent">
+  <div id="wrapper">
+    <div id="headcontainer">
+      <header>
+        <h1>Brew Bar Baz</h1>
+        <h3>Search breweries by city. Support your local businesses!</h3>
+        <p class="coords">Your coordinates are not available. Please allow this site to view your location and try refreshing the page.</p>
+        <div class="introtext">
+          <div class="container">
+            <form action="/" method="post">
+              <input type="text" name="locality" placeholder="Where do you want to drink?">
+              <input id="locality-button" type="submit">
+            </form>
+          </div>
+
+        </div>
+      </header>
+    </div>
+    <div id="maincontentcontainer">
+      <div id="maincontent">
      <!--  <div class="section group">
       <h3>Two Columns</h3>
     </div> -->
-
+    <% if @breweries %>
     <% @breweries.each do |brewery| %>
     <div class="section group">
       <h4>
@@ -42,6 +43,7 @@
         </h5>
       </div>
     </div>
+    <% end %>
     <% end %>
 
   </div>

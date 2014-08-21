@@ -2,14 +2,12 @@ navigator.geolocation.getCurrentPosition( function(position) {
     var latitude = position.coords.latitude
     var longitude = position.coords.longitude
     $('.coords').text("Your coordinates are " + latitude + ", " + longitude)
-    // AJAX to index.rb
 });
 
 ////////////GEOLOCATION////////////////
 navigator.geolocation.getCurrentPosition( function(position) {
   initialize(position.coords.latitude,position.coords.longitude)
 });
-
 ////////////GOOGLE MAPS////////////////
 function initialize(lat,long) {
   var userLocation = new google.maps.LatLng(lat, long)
@@ -44,4 +42,4 @@ function placeMarker(location,map,markers) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize)
-myCoords(position)
+
