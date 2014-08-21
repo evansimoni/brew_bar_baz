@@ -5,62 +5,69 @@
 <div class="container">
   <button id="find-me">find me</button>
   <button id="zoom-in">zoom to me</button>
+  <!-- zip code form -->
+  <form>
+  </form>
 </div>
 
 <div id="wrapper">
   <div id="headcontainer">
     <header>
-    <h1>Brew Bar Baz</h1>
-    <h3>The following breweries are in your area. Support your local businesses!</h3>
-    <p class="coords">Your coordinates are not available. Please allow this site to view your location and try refreshing the page.</p>
-    <div class="introtext">
+      <h1>Brew Bar Baz</h1>
+      <h3>The following breweries are in your area. Support your local businesses!</h3>
+      <p class="coords">Your coordinates are not available. Please allow this site to view your location and try refreshing the page.</p>
+      <div class="introtext">
 
-    </div>
+      </div>
     </header>
   </div>
   <div id="maincontentcontainer">
     <div id="maincontent">
      <!--  <div class="section group">
       <h3>Two Columns</h3>
-      </div> -->
+    </div> -->
 
-      <% @breweries.each_with_index do |brewery, index| %>
-      <div class="section group">
-        <div class="col span_1_of_2">
-        <%= index %>
-        <%= brewery["streetAddress"] %>
-        </div>
-        <div class="col span_1_of_2">
-        <%= index %>
-        <%= brewery["streetAddress"] %>
-        </div>
-      </div>
-      <% end %>
-
+    <% @breweries.each do |brewery| %>
+    <div class="section group">
+      <h4>
+        <a href="<%= brewery["website"] %>"><%= brewery["brewery"]["name"] %></a>
+      </h4>
+      <div class="col span_2_of_2">
+        <p>
+          <%= brewery["brewery"]["description"] %>
+        </p>
+        <h5>
+          <%= brewery["streetAddress"] %><br>
+          <%= brewery["phone"] %>
+        </h5>
       </div>
     </div>
-  </div>
-  <div id="footercontainer">
-    <footer class="group">
-      <div class="col span_1_of_3">
-      <h4>About me</h4>
-      <p></p>
-      </div>
-      <div class="col span_1_of_3">
-      <h4>Why did I make this?</h4>
-      <p></p>
-      </div>
-      <div class="col span_1_of_3">
-      <h4>More about DBC</h4>
-      <p></p>
-      </div>
-        <br class="breaker" />
-    </footer>
+    <% end %>
+
   </div>
 </div>
-  <!-- JavaScript at the bottom for fast page loading -->
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
-  <!-- More Scripts-->
-  <script src="js/responsivegridsystem.js"></script>
+</div>
+<div id="footercontainer">
+  <footer class="group">
+    <div class="col span_1_of_3">
+      <h4>About me</h4>
+      <p></p>
+    </div>
+    <div class="col span_1_of_3">
+      <h4>Why did I make this?</h4>
+      <p></p>
+    </div>
+    <div class="col span_1_of_3">
+      <h4>More about DBC</h4>
+      <p></p>
+    </div>
+    <br class="breaker" />
+  </footer>
+</div>
+</div>
+<!-- JavaScript at the bottom for fast page loading -->
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+<!-- More Scripts-->
+<script src="js/responsivegridsystem.js"></script>
