@@ -1,3 +1,14 @@
+navigator.geolocation.getCurrentPosition( function(position) {
+    var latitude = position.coords.latitude
+    var longitude = position.coords.longitude
+    $('.coords').text("Your coordinates are " + latitude + ", " + longitude)
+});
+
+// function myCoords() {
+//   var latitude = position.coords.latitude;
+//   var longitude = position.coords.longitude;
+// }
+
 ////////////GEOLOCATION////////////////
 navigator.geolocation.getCurrentPosition( function(position) {
   initialize(position.coords.latitude,position.coords.longitude)
@@ -22,7 +33,7 @@ function initialize(lat,long) {
     })
 
   google.maps.event.addDomListener(zoomBtn, 'click', function() {
-      map.setZoom(18);
+      map.setZoom(11);
     });
 
 }
@@ -37,3 +48,4 @@ function placeMarker(location,map,markers) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize)
+myCoords(position)
