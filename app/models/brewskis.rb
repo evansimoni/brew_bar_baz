@@ -17,5 +17,9 @@ module Brewskis
         })
     end
 
+    def find_beers
+
+    end
+
   end
 end
