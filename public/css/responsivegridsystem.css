@@ -5,6 +5,12 @@
   margin: 0 auto;
 }
 
+img {
+	vertical-align: top;
+	display: block;
+	margin: auto;
+}
+
 /*  IMPORT FONTS  ============================================================================= */
 
 /*@font-face {

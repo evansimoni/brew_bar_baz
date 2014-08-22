@@ -1,29 +1,29 @@
 <div id="skiptomain"><a href="#maincontent">skip to main content</a></div>
 
-<div id="map-canvas"></div>
-<button id="find-me">find me</button>
-<button id="zoom-in">zoom to me</button>
+<!-- <div id="map-canvas"></div> -->
+<!-- <button id="find-me">find me</button>
+  <button id="zoom-in">zoom to me</button> -->
 
 
-<div id="wrapper">
-  <div id="headcontainer">
-    <header>
-      <h1>Brew Bar Baz</h1>
-      <h3>Search breweries by city</h3>
-      <div class="introtext">
-        <div class="container">
-          <form action="/" method="post">
-            <input type="text" name="locality" placeholder="Where do you want to drink?">
-            <input id="locality-button" type="submit"><br>
-            <p class="coords">Your coordinates are not available. Please allow this site to view your location and try refreshing the page.</p>
-          </form>
+  <div id="wrapper">
+    <div id="headcontainer">
+      <header>
+        <h1>Brew Bar Baz</h1>
+        <h3>Explore breweries by city</h3>
+        <div class="introtext">
+          <div class="container">
+            <form action="/" method="post">
+              <input type="text" name="locality" placeholder="City Name">
+              <input id="locality-button" type="submit"><br><br>
+              <div class="coords">Your coordinates are not available. Please allow this site to view your location and try refreshing the page.</div>
+            </form>
+          </div>
+
         </div>
-
-      </div>
-    </header>
-  </div>
-  <div id="maincontentcontainer">
-    <div id="maincontent">
+      </header>
+    </div>
+    <div id="maincontentcontainer">
+      <div id="maincontent">
      <!--  <div class="section group">
       <h3>Two Columns</h3>
     </div> -->
@@ -33,16 +33,21 @@
       <h4>
         <a href="<%= brewery["website"] %>"><%= brewery["brewery"]["name"] %></a>
       </h4>
-      <div class="col span_2_of_2">
+      <div class="col span_3_of_6">
         <p>
           <%= brewery["brewery"]["description"] %>
         </p>
-        <% if brewery["brewery"]["images"] %>
-        <img src="<%= brewery["brewery"]["images"]["medium"] %>">
-        <% end %>
         <h5>
           <%= brewery["streetAddress"] %><br>
           <%= brewery["phone"] %>
+        </h5>
+      </div>
+      <div class="col span_2_of_6">
+        <% if brewery["brewery"]["images"] %>
+        <img src="<%= brewery["brewery"]["images"]["icon"] %>">
+        <% end %>
+        <h5 style="text-align: center">
+          <a href="#" class="beer_menu">See the beer menu</a>
         </h5>
       </div>
     </div>
@@ -70,9 +75,4 @@
   </footer>
 </div>
 </div>
-<!-- JavaScript at the bottom for fast page loading -->
-<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
-<!-- More Scripts-->
-<script src="js/responsivegridsystem.js"></script>
+
