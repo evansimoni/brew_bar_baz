@@ -112,9 +112,9 @@ letter-spacing: -1px;
 
 h1 {
 font-family:  Pacifico, LeagueGothicRegular, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
-color: #fff;
+color: #FFFAF0;
 margin-bottom : 0.2em;
-font-size : 6em; /* 96 / 16 */
+font-size : 10em; /* 96 / 16 */
 line-height : 1.4;
 text-shadow: 2px 4px 6px #000000;
 }
@@ -122,10 +122,11 @@ text-shadow: 2px 4px 6px #000000;
 
 h2 {
 color: #222;
-margin-bottom : .5em;
-margin-top : .5em;
-font-size : 2.75em; /* 40 / 16 */
+margin-bottom : .1em;
+margin-top : .3em;
+font-size : 3em; /* 40 / 16 */
 line-height : 1.2;
+font-family: Lora
 }
 
 h3 {
@@ -162,7 +163,9 @@ margin-bottom : 1.5em;
 font-size : 1em; /* 16 / 16 = 1 */ }
 
 p {
-hyphens : auto;  }
+hyphens : auto;
+font-size: 1.2em;
+}
 
 
 p.introtext {
