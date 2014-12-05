@@ -1,98 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-  <meta charset="utf-8">
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <meta name="description" content="This is the Responsive Grid System, a quick, easy and flexible way to create a responsive web site.">
-  <meta name="keywords" content="responsive, grid, system, web design">
-
-  <meta name="author" content="www.grahamrobertsonmiller.co.uk">
-
-  <meta http-equiv="cleartype" content="on">
-
   <!-- FAVICON -->
   <link rel="shortcut icon" href="/../images/beer.ico">
 
-  <!-- FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- Responsive Grid CSS -->
+  <link rel="stylesheet" type="text/css" href="css/responsivegrid.css">
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GOOGLE FONTS -->
+  <link href='http://fonts.googleapis.com/css?family=Pacifico, Lora' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 
-  <!-- Responsive and mobile friendly stuff -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/html5reset.css" media="all">
-  <link rel="stylesheet" href="css/responsivegridsystem.css" media="all">
-  <link rel="stylesheet" href="css/col.css" media="all">
-  <link rel="stylesheet" href="css/2cols.css" media="all">
-  <link rel="stylesheet" href="css/3cols.css" media="all">
-  <link rel="stylesheet" href="css/4cols.css" media="all">
-  <link rel="stylesheet" href="css/6cols.css" media="all">
-  <!-- <link rel="stylesheet" type="text/css" href="/my_own_css.css"> -->
-
-  <!-- Responsive Stylesheets -->
-  <link rel="stylesheet" media="only screen and (max-width: 1024px) and (min-width: 769px)" href="/css/1024.css">
-  <link rel="stylesheet" media="only screen and (max-width: 768px) and (min-width: 481px)" href="/css/768.css">
-  <link rel="stylesheet" media="only screen and (max-width: 480px)" href="/css/480.css">
-
-  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements and feature detects -->
-  <script src="js/modernizr-2.5.3-min.js"></script>
-
-  <style type="text/css">
-  /*  THIS IS JUST TO GET THE GRID TO SHOW UP.  YOU DONT NEED THIS IN YOUR CODE */
-  #maincontent .col {
-    background: #fff;
-    background: rgba(204, 204, 204);
-    border: 2px solid #BFA885;
-    padding: 2%;
-  }
-
-  #headcontainer {
-    background: url(../images/beerpattern.jpg);
-    border-bottom: 2px solid #ccc;
-    margin-top: -10px;
-  }
-
-  .explore {
-    color: #FFFAF0;
-    font-weight: bold;
-    text-shadow: 1px 3px 4px #000000;
-  }
-
-  a, a:visited {
-    color: #7F8F51
-  }
-
-  a:hover {
-    color: #ccc;
-  }
-
-
-
-  </style>
-
-  <script src="/js/application.js">
-  </script>
-  <script src="/js/event.js">
-  </script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-  </script>
-  <!-- JavaScript at the bottom for fast page loading -->
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
-  <!-- More Scripts-->
-  <script src="js/responsivegridsystem.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false">
-  </script>
-
-  <title>Brew Bar Baz</title>
+  <!-- TITLE -->
+  <title>Brew Bar Baz - Beer Discovery Tool</title>
 </head>
+
 <body>
   <%= yield %>
 </body>
+
 </html>

@@ -10,7 +10,6 @@ module Brewskis
     def find_locations
       locations = self.class.get('/locations', {
         query: { key: "ef1069aca2f731647326ccfbb58a47d4", locality: @locality
-          # , latitude: "37.7846330", longitude: "-122.3974140"
         }
         })
     end

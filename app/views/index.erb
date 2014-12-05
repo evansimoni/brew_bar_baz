@@ -1,75 +1,52 @@
-<div id="skiptomain"><a href="#maincontent">skip to main content</a></div>
-<!-- <div id="map-canvas"></div> -->
-<!-- <button id="find-me">find me</button>
-  <button id="zoom-in">zoom to me</button> -->
-  <div id="wrapper">
-    <div id="headcontainer">
-      <header>
-        <h1>Brew Bar Baz</h1>
-        <h3 class="explore">Explore breweries by city</h3>
-        <div class="introtext">
-          <div class="container">
-            <form action="/" method="post">
-              <input type="text" name="locality" placeholder="City Name">
-              <input id="locality-button" type="submit"><br><br>
-              <div class="coords explore">Your coordinates are not available. Please allow this site to view your location and try refreshing the page.</div>
-            </form>
-          </div>
+<div id="wrapper">
 
+  <div id="headcontainer">
+    <header>
+      <h1>Brew Bar Baz</h1>
+      <h3 class="explore">Explore breweries by city</h3>
+      <div class="introtext">
+        <div class="container">
+          <form action="/" method="post">
+            <input type="text" name="locality" placeholder="San Francisco">
+            <input id="locality-button" type="submit"><br><br>
+          </form>
         </div>
-      </header>
-    </div>
-    <div id="maincontentcontainer">
-      <div id="maincontent">
-     <!--  <div class="section group">
-      <h3>Two Columns</h3>
-    </div> -->
-    <% if @breweries %>
-    <% @breweries.each do |brewery| %>
-    <div id="<%= brewery["breweryId"] %>" class="section group" >
-      <h2>
-        <a href="<%= brewery["website"] %>"><%= brewery["brewery"]["name"] %></a>
-      </h2>
-      <div class="col span_3_of_6">
-        <p>
-          <%= brewery["brewery"]["description"] %>
-        </p>
-        <h5>
-          <%= brewery["streetAddress"] %><br>
-          <%= brewery["phone"] %>
-        </h5>
+        <h4 class="explore">Check out the code on <a href="https://github.com/evansimoni/brew_bar_baz">GitHub</a></h4>
       </div>
-      <div class="col span_2_of_6">
-        <% if brewery["brewery"]["images"] %>
-        <img src="<%= brewery["brewery"]["images"]["medium"] %>">
-        <% end %>
-        <h4 style="text-align: center">
-          <a href="#" class="beer_menu">See the beer menu</a>
-        </h4>
+    </header>
+  </div>
+
+  <div id="maincontentcontainer">
+
+    <div id="maincontent">
+      <% if @breweries %>
+      <% @breweries.each do |brewery| %>
+      <div id="<%= brewery["breweryId"] %>" class="section group" >
+
+        <h2>
+          <a href="<%= brewery["website"] %>"><%= brewery["brewery"]["name"] %></a>
+        </h2>
+
+        <div class="col span_3_of_6">
+          <p>
+            <%= brewery["brewery"]["description"] %>
+          </p>
+          <h5>
+            <%= brewery["streetAddress"] %><br>
+            <%= brewery["phone"] %>
+          </h5>
+        </div>
+
+        <div class="col span_2_of_6">
+          <% if brewery["brewery"]["images"] %>
+          <img src="<%= brewery["brewery"]["images"]["medium"] %>">
+          <% end %>
+        </div>
       </div>
+      <% end %>
+      <% end %>
     </div>
-    <% end %>
-    <% end %>
 
   </div>
-</div>
-</div>
-<div id="footercontainer">
-  <footer class="group">
-    <div class="col span_1_of_3">
-      <h4></h4>
-      <p></p>
-    </div>
-    <div class="col span_1_of_3">
-      <h4 class="explore">Made by Evan Simoni using the BreweryDB API and The Responsive Grid System.</h4>
-      <p></p>
-    </div>
-    <div class="col span_1_of_3">
-      <h4></h4>
-      <p></p>
-    </div>
-    <br class="breaker" />
-  </footer>
-</div>
-</div>
 
+</div>
