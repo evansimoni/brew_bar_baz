@@ -14,11 +14,5 @@ module Brewskis
         })
     end
 
-    def find_beers(brewery_id)
-      beers = self.class.get("/brewery/#{brewery_id}/beers", {
-        query: { key: "ef1069aca2f731647326ccfbb58a47d4"
-        }
-        })
-    end
   end
 end

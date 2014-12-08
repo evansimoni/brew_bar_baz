@@ -1,52 +1,69 @@
-<div id="wrapper">
-
-  <div id="headcontainer">
-    <header>
-      <h1>Brew Bar Baz</h1>
-      <h3 class="explore">Explore breweries by city</h3>
-      <div class="introtext">
-        <div class="container">
-          <form action="/" method="post">
-            <input type="text" name="locality" placeholder="San Francisco">
-            <input id="locality-button" type="submit"><br><br>
-          </form>
-        </div>
-        <h4 class="explore">Check out the code on <a href="https://github.com/evansimoni/brew_bar_baz">GitHub</a></h4>
-      </div>
-    </header>
+<!-- TOP SECTION -->
+<div class="top section group">
+  <div class="col span_5_of_5">
+    <h1>
+      Brew Bar Baz
+    </h1>
+    <h2>
+      Discover breweries by city
+    </h2>
   </div>
 
-  <div id="maincontentcontainer">
+  <div class="noleftmargin col span_5_of_5">
+    <form action="/" method="post" id="mainform">
+      <input type="text" name="locality" placeholder="i.e. San Francisco">
+      <input id="locality-button" type="submit"><br><br>
+    </form>
 
-    <div id="maincontent">
-      <% if @breweries %>
-      <% @breweries.each do |brewery| %>
-      <div id="<%= brewery["breweryId"] %>" class="section group" >
+    <h3>
+      Check out the code on <a href="https://github.com/evansimoni/brew_bar_baz">GitHub</a>
+    </h3>  
+  </div>
+</div>
 
-        <h2>
-          <a href="<%= brewery["website"] %>"><%= brewery["brewery"]["name"] %></a>
-        </h2>
+<!-- BOTTOM SECTION -->
+<div class="content" id="content">
+  <% if @breweries %>
+  <% @breweries.each do |brewery| %>
+  <div id="<%= brewery["breweryId"] %>" class="paddingtop section group" >
+    <div class="noleftmargin col span_3_of_5">
 
-        <div class="col span_3_of_6">
-          <p>
-            <%= brewery["brewery"]["description"] %>
-          </p>
-          <h5>
-            <%= brewery["streetAddress"] %><br>
-            <%= brewery["phone"] %>
-          </h5>
-        </div>
+      <h4>
+        <% if brewery["website"] %>
+        <a href="<%= brewery["website"] %>" target="_blank">
+          <%= brewery["brewery"]["name"] %>
+        </a>
+        <% else %>
+        <%= brewery["brewery"]["name"] %>
+        <% end %>
+      </h4>
 
-        <div class="col span_2_of_6">
-          <% if brewery["brewery"]["images"] %>
-          <img src="<%= brewery["brewery"]["images"]["medium"] %>">
-          <% end %>
-        </div>
-      </div>
-      <% end %>
-      <% end %>
+      <p class="bold">
+        <%= brewery["streetAddress"] %>
+      </p>
+      <p class="bold">
+        <%= brewery["phone"] %>
+      </p>
     </div>
 
+    <div class="noleftmargin col span_2_of_5">
+      <% if brewery["brewery"]["images"] %>
+      <a href="<%= brewery["website"] %>" target="_blank">
+        <img src="<%= brewery["brewery"]["images"]["medium"] %>">
+      </a>
+      <% end %>
+    </div>
   </div>
 
+  <div class="section group">
+    <div class="noleftmargin col span_5_of_5">
+      <p>
+        <%= brewery["brewery"]["description"] %>
+      </p>
+    </div>
+  </div>
+  <br>
+
+  <% end %>
+  <% end %>
 </div>
